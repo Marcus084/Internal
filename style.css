@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  background-color: grey;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  border-style: solid;
+  font-size: 10px;
+  padding: 5px;
+  border-color: white;
+}
+
+header {
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  color:white;
+  padding:10px 5%;
+}
+
+.logo {
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  margin-right: auto;
+}
+
+.navigation {
+  list-style: none;
+}
+
+.navigation li {
+  display: inline-block;
+  padding:0px 20px;
+}
+
+.navigation li a {
+  transition: 0.3s;
+}
+
+.navigation li a:hover {
+  color: #0088a9
+}
