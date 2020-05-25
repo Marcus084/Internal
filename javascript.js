@@ -1,11 +1,11 @@
-const menuIcon = document.querySelector(".menu");
+const menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
-menuIcon.addEventListener("click" , () => {
-  if (!menuOpen) {
-    menuIcon.classlist.add("open");
+menuBtn = addEventListener('click', () => {
+  if(!menuOpen) {
+    menuBtn.classList.add('open');
     menuOpen = true;
   } else {
-    menuIcon.classlist.remove("open");
+    menuBtn.classList.remove('open');
     menuOpen = false;
   }
 });
