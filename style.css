@@ -7,65 +7,112 @@ body {
   font-family:"Dosis", sans-serif;
   background:url(img/hero.jpg) center no-repeat;
   background-size:cover;
-  display:flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 100%;
 }
 
-.menu-btn {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-  transition: all .5s ease-in-out;
-  border: 3px solid white;
-}
-
-.menu-btn_burger {
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   width: 50px;
-  height: 6px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-  transition: all .5s ease-in-out;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #15DB95;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.menu-btn_burger::before,
-.menu-btn_burger::after {
+.toggle:before {
+  content: "+";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 50px;
+  width: 100%;
+  height: 100%;
+  color: #3FA0EF;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  background: #E4C580;
+  transition: 1s;
+
+}
+
+
+.toggle.active:before {
+  transform: rotate(405deg);
+  background: #3FA0EF;
+  color: #E4C580;
+}
+
+.overlay {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(1, 183, 255);
+  transition: transform 0.5s;
+}
+
+.overlay.active {
+  transform: scale(100,100);
+
+}
+
+.menu {
+  width:100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.menu.active {
+  visibility:visible; 
+}
+
+.menu ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  margin:0;
+  padding:0;
+}
+
+.menu ul li {
+  list-style: none;
+}
+
+.menu ul li a {
+  position: relative;
+  align-items: center;
+  font-size: 19px;
+  text-decoration: none;
+  color: white;
+  margin: 20px 0;
+  display: block;
+  text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+
+.menu ul li a:before{
   content:"";
   position:absolute;
-  width:50px;
-  height:6px;
-  background:white;
-  border-radius:5px;
-  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-  transition: all .5s ease-in-out;
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 20px;
+  background:#E4C580;
+  z-index:-1;
+  transform: scaleX(0);
+  transform-origin:left;
+  transition: transform 0.5s;
 }
 
-.menu-btn_burger::before {
-  transform: translateY(-16px);
-
-}
-.menu-btn_burger::after {
-  transform: translateY(16px);
-
-}
-
-.menu-btn.open .menu-btn_burger {
-  transform: translateX(-50px);
-  background:transparent;
-  box-shadow: none;
-}
-
-.menu-btn.open .menu-btn_burger::before {
-  transform:rotate(45deg) translate(35px , -35px);
-}
-
-.menu-btn.open .menu-btn_burger::after {
-  transform:rotate(-45deg) translate(35px , 35px);
+.menu ul li a:hover:before {
+  transform: scaleX(1);
 }
