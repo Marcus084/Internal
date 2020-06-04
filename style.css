@@ -91,7 +91,7 @@ body {
 }
 
 .menu ul {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
@@ -138,7 +138,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align:center;
-  padding: 2rem;
+  padding:2rem;
   background: #f9f9f9;
 }
 
@@ -203,13 +203,13 @@ body {
 .footer ul li {
   list-style-type: none;
 }
-
 .h4 {
   border-color: red;
 }
 
 .icons a {
   display:flex;
+  flex-direction: row;
   text-decoration: none;
   padding: 10px;
   border-color: white;
@@ -219,6 +219,12 @@ body {
   display: flex;
   flex-direction:row;
   color:red;
+}
+
+a:hover{
+  color:#3FA0EF;
+  transition: 0.5s;
+
 }
 
 .body1 {
