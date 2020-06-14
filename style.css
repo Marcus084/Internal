@@ -267,6 +267,7 @@ a:hover{
 }
 
 .product-head{
+  font-family:italic;
   margin:30px;
   font-size:18px;
 }
